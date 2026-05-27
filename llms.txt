@@ -8,6 +8,7 @@ living, and visualize your hiring pipeline.
 ## Installation
 
 ``` r
+
 # install.packages("pak")
 pak::pak("ADC-405-S26/jobtrackeR")
 ```
@@ -15,6 +16,7 @@ pak::pak("ADC-405-S26/jobtrackeR")
 ## Quick Start
 
 ``` r
+
 library(jobtrackr)
 data(jobs)
 ```
@@ -22,6 +24,7 @@ data(jobs)
 ### Summarize your applications
 
 ``` r
+
 application_summary(jobs)
 #> Response rate (non-Applied): 66.7%
 #>        status count percent
@@ -34,6 +37,7 @@ application_summary(jobs)
 ### Compare offers by cost of living
 
 ``` r
+
 compare_offers(jobs)
 #>     company              position    location cost_of_living  status
 #> 1 Microsoft        Data Scientist  Seattle WA             91 Offered

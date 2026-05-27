@@ -22,6 +22,7 @@ companies, locations, and statuses. Which I think is sort of realistic
 of what a semester of job hunting looks like.
 
 ``` r
+
 library(jobtrackr)
 data(jobs)
 ```
@@ -29,6 +30,7 @@ data(jobs)
 Let us take a quick look at what the data contains:
 
 ``` r
+
 head(jobs)
 ```
 
@@ -60,6 +62,7 @@ everything I applied to, what actually happened?
 answers that question in one line.
 
 ``` r
+
 application_summary(jobs)
 ```
 
@@ -88,6 +91,7 @@ submitted, and flags any that have gone more than 21 days with no
 response.
 
 ``` r
+
 result <- days_since_applied(jobs, flag_after = 21)
 result[result$possibly_ghosted == TRUE,
        c("company", "position", "date_applied", "days_waiting")]
@@ -123,6 +127,7 @@ adjusts each offer by the cost of living index of its city, so you can
 compare apples to apples.
 
 ``` r
+
 compare_offers(jobs)
 ```
 
@@ -151,6 +156,7 @@ gives you a visual summary of your entire job search funnel — how many
 applications made it to each stage.
 
 ``` r
+
 pipeline_stage(jobs)
 ```
 
