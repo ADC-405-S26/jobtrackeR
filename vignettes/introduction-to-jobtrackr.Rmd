@@ -118,10 +118,8 @@ tells you that the hardest part of this job search is getting in the
 door in the first place. If you want more offers, it's more convincing to apply
 more strategically, not just more broadly.
 
-## Wrapping Up
+## Overview
 
 jobtrackr will not help ypu prep you for interviews.
 What it will do is to give yu a broader view of the job search and show
-you clearly what is working and what is not. The four functionsm, namely, summarize
-your pipeline, flag what needs attention, compare your real options, and visualize your
-progress.
+you clearly what is working and what is not. 
