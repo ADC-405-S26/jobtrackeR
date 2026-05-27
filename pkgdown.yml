@@ -1,9 +1,0 @@
-pandoc: 3.6.3
-pkgdown: 2.2.0
-pkgdown_sha: ~
-articles:
-  introduction-to-jobtrackr: introduction-to-jobtrackr.html
-last_built: 2026-05-27T04:49Z
-urls:
-  reference: https://adc-405-s26.github.io/jobtrackeR/reference
-  article: https://adc-405-s26.github.io/jobtrackeR/articles
