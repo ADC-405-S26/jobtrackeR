@@ -1,9 +1,11 @@
 # jobtrackr
 
-jobtrackr helps you track, organize, and analyze your job applications.
-It provides four simple tools to summarize application statuses, flag
-applications with no response, compare offers adjusted for cost of
-living, and visualize your hiring pipeline.
+Job hunting is daunting, especially in this market nowadays. Between
+dozens of applications, different statuses, and offers in different
+cities, it is easy to lose track of where everything are.
+
+jobtrackr provides four simple tools to help you organize and analyze
+your job search.
 
 ## Installation
 
@@ -13,20 +15,26 @@ living, and visualize your hiring pipeline.
 pak::pak("ADC-405-S26/jobtrackeR")
 ```
 
-## Quick Start
+## Functions
+
+- [`application_summary()`](https://adc-405-s26.github.io/jobtrackeR/reference/application_summary.md) -
+  counts applications by status and returns your overall response rate
+- [`days_since_applied()`](https://adc-405-s26.github.io/jobtrackeR/reference/days_since_applied.md) -
+  calculates how long each application has been waiting and flags ones
+  with no response after a set number of days
+- [`compare_offers()`](https://adc-405-s26.github.io/jobtrackeR/reference/compare_offers.md) -
+  adjusts offer salaries by cost of living so you can compare them
+  fairly across cities
+- [`pipeline_stage()`](https://adc-405-s26.github.io/jobtrackeR/reference/pipeline_stage.md) -
+  visualizes your full hiring funnel from Applied to Offered
+
+## Example
 
 ``` r
 
 library(jobtrackr)
 data(jobs)
-```
-
-### Summarize your applications
-
-``` r
-
 application_summary(jobs)
-#> Response rate (non-Applied): 66.7%
 #>        status count percent
 #> 1     Applied    10    33.3
 #> 2    Rejected    10    33.3
@@ -34,22 +42,27 @@ application_summary(jobs)
 #> 4     Offered     3    10.0
 ```
 
-### Compare offers by cost of living
+## Dataset
+
+The package includes `jobs`, a simulated dataset of 30 job applications
+with columns for company, position, location, cost of living, status,
+date applied, salary, and source.
 
 ``` r
 
-compare_offers(jobs)
-#>     company              position    location cost_of_living  status
-#> 1 Microsoft        Data Scientist  Seattle WA             91 Offered
-#> 2 Accenture Management Consultant  Chicago IL             88 Offered
-#> 3      Nike            HR Analyst Portland OR             85 Offered
-#>   date_applied salary      source adjusted_salary
-#> 1   2024-02-01 110000    LinkedIn          120879
-#> 2   2024-03-20  95000    Referral          107955
-#> 3   2024-03-01  75000 Career Fair           88235
+head(jobs[, c("company", "position", "status", "salary")])
+#>     company         position      status salary
+#> 1    Google     Data Analyst Interviewed  95000
+#> 2    Amazon   HR Coordinator    Rejected  85000
+#> 3  Deloitte Business Analyst     Applied  78000
+#> 4 Microsoft   Data Scientist     Offered 110000
+#> 5     Apple Jr. Statistician    Rejected  88000
+#> 6       IBM    Data Engineer Interviewed  82000
 ```
 
-For a full walkthrough of all four functions with real examples and
-detailed commentary, see the [Introduction to
+## Learn More
+
+For a full walkthrough with real examples and commentary, see the
+[Introduction to
 jobtrackr](https://adc-405-s26.github.io/jobtrackeR/articles/introduction-to-jobtrackr.html)
 vignette.

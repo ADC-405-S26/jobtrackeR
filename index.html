@@ -55,7 +55,8 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>jobtrackr helps you track, organize, and analyze your job applications. It provides four simple tools to summarize application statuses, flag applications with no response, compare offers adjusted for cost of living, and visualize your hiring pipeline.</p>
+<p>Job hunting is daunting, especially in this market nowadays. Between dozens of applications, different statuses, and offers in different cities, it is easy to lose track of where everything are.</p>
+<p>jobtrackr provides four simple tools to help you organize and analyze your job search.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -64,38 +65,50 @@
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"ADC-405-S26/jobtrackeR"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="quick-start">Quick Start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
+<h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h2>
+<ul>
+<li>
+<code><a href="reference/application_summary.html">application_summary()</a></code> - counts applications by status and returns your overall response rate</li>
+<li>
+<code><a href="reference/days_since_applied.html">days_since_applied()</a></code> - calculates how long each application has been waiting and flags ones with no response after a set number of days</li>
+<li>
+<code><a href="reference/compare_offers.html">compare_offers()</a></code> - adjusts offer salaries by cost of living so you can compare them fairly across cities</li>
+<li>
+<code><a href="reference/pipeline_stage.html">pipeline_stage()</a></code> - visualizes your full hiring funnel from Applied to Offered</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://adc-405-s26.github.io/jobtrackeR/">jobtrackr</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">jobs</span><span class="op">)</span></span></code></pre></div>
-<div class="section level3">
-<h3 id="summarize-your-applications">Summarize your applications<a class="anchor" aria-label="anchor" href="#summarize-your-applications"></a>
-</h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/application_summary.html">application_summary</a></span><span class="op">(</span><span class="va">jobs</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Response rate (non-Applied): 66.7%</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">jobs</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/application_summary.html">application_summary</a></span><span class="op">(</span><span class="va">jobs</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        status count percent</span></span>
 <span><span class="co">#&gt; 1     Applied    10    33.3</span></span>
 <span><span class="co">#&gt; 2    Rejected    10    33.3</span></span>
 <span><span class="co">#&gt; 3 Interviewed     7    23.3</span></span>
 <span><span class="co">#&gt; 4     Offered     3    10.0</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="compare-offers-by-cost-of-living">Compare offers by cost of living<a class="anchor" aria-label="anchor" href="#compare-offers-by-cost-of-living"></a>
-</h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/compare_offers.html">compare_offers</a></span><span class="op">(</span><span class="va">jobs</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     company              position    location cost_of_living  status</span></span>
-<span><span class="co">#&gt; 1 Microsoft        Data Scientist  Seattle WA             91 Offered</span></span>
-<span><span class="co">#&gt; 2 Accenture Management Consultant  Chicago IL             88 Offered</span></span>
-<span><span class="co">#&gt; 3      Nike            HR Analyst Portland OR             85 Offered</span></span>
-<span><span class="co">#&gt;   date_applied salary      source adjusted_salary</span></span>
-<span><span class="co">#&gt; 1   2024-02-01 110000    LinkedIn          120879</span></span>
-<span><span class="co">#&gt; 2   2024-03-20  95000    Referral          107955</span></span>
-<span><span class="co">#&gt; 3   2024-03-01  75000 Career Fair           88235</span></span></code></pre></div>
-<p>For a full walkthrough of all four functions with real examples and detailed commentary, see the <a href="https://adc-405-s26.github.io/jobtrackeR/articles/introduction-to-jobtrackr.html">Introduction to jobtrackr</a> vignette.</p>
+<div class="section level2">
+<h2 id="dataset">Dataset<a class="anchor" aria-label="anchor" href="#dataset"></a>
+</h2>
+<p>The package includes <code>jobs</code>, a simulated dataset of 30 job applications with columns for company, position, location, cost of living, status, date applied, salary, and source.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">jobs</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"company"</span>, <span class="st">"position"</span>, <span class="st">"status"</span>, <span class="st">"salary"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt;     company         position      status salary</span></span>
+<span><span class="co">#&gt; 1    Google     Data Analyst Interviewed  95000</span></span>
+<span><span class="co">#&gt; 2    Amazon   HR Coordinator    Rejected  85000</span></span>
+<span><span class="co">#&gt; 3  Deloitte Business Analyst     Applied  78000</span></span>
+<span><span class="co">#&gt; 4 Microsoft   Data Scientist     Offered 110000</span></span>
+<span><span class="co">#&gt; 5     Apple Jr. Statistician    Rejected  88000</span></span>
+<span><span class="co">#&gt; 6       IBM    Data Engineer Interviewed  82000</span></span></code></pre></div>
 </div>
+<div class="section level2">
+<h2 id="learn-more">Learn More<a class="anchor" aria-label="anchor" href="#learn-more"></a>
+</h2>
+<p>For a full walkthrough with real examples and commentary, see the <a href="https://adc-405-s26.github.io/jobtrackeR/articles/introduction-to-jobtrackr.html">Introduction to jobtrackr</a> vignette.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
