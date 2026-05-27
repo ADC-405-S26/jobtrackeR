@@ -1,19 +1,132 @@
 ---
-title: "introduction-to-jobtrackr"
+title: "Introduction to jobtrackr"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction-to-jobtrackr}
+  %\VignetteIndexEntry{Introduction to jobtrackr}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+## The Problem With Job Hunting
+
+It is the spring semester of your senior year. You have been applying
+to jobs for weeks — some on LinkedIn, some through referrals, some on
+Indeed. Your spreadsheet is a mess. You cannot remember which companies
+responded, which ones ghosted you, or whether that offer from Austin is
+actually better than the one from San Francisco once you factor in the
+cost of living.
+
+This is exactly the problem jobtrackr was built to solve.
+
+jobtrackr is a small R package that helps you track, organize, and
+analyze your job applications. It will not find you a job — but it
+will help you think clearly about the ones you have already applied for.
+
+## Getting Started
+
+First, load the package and the built-in example dataset. The `jobs`
+dataset contains 30 simulated job applications across different
+companies, locations, and statuses — a realistic snapshot of what a
+semester of job hunting looks like.
+
+```{r setup, message = FALSE, warning = FALSE}
+library(jobtrackr)
+data(jobs)
 ```
 
-```{r setup}
-library(jobtrackr)
+Let us take a quick look at what the data contains:
+
+```{r}
+head(jobs)
 ```
+
+Each row is one application. The columns tell us the company, position,
+location, cost of living index for that city, current status, date
+applied, estimated salary, and where the listing was found.
+
+## Step 1: Where Do Things Stand?
+
+The first thing any job seeker wants to know is simple: out of
+everything I applied to, what actually happened?
+
+`application_summary()` answers that question in one line.
+
+```{r}
+application_summary(jobs)
+```
+
+Out of 30 applications, exactly one third are still sitting at
+"Applied" with no response — and another third ended in rejection.
+Only 3 applications (10%) resulted in an offer. The overall response
+rate is 66.7%, meaning roughly 2 out of every 3 applications received
+some kind of reply. This kind of summary helps you quickly understand
+where your job search stands without scrolling through a spreadsheet.
+
+## Step 2: Who Has Not Responded Yet?
+
+Waiting is the hardest part of job hunting. But there is a difference
+between patiently waiting and being ghosted. `days_since_applied()`
+calculates how many days have passed since each application was
+submitted, and flags any that have gone more than 21 days with no
+response.
+
+```{r}
+result <- days_since_applied(jobs, flag_after = 21)
+result[result$possibly_ghosted == TRUE,
+       c("company", "position", "date_applied", "days_waiting")]
+```
+
+Ten applications have gone over 21 days with no response and are
+flagged as possibly ghosted. Companies like Deloitte, Meta, and
+Salesforce have been waiting the longest — over 800 days in this
+simulated dataset. In a real job search, this list tells you exactly
+which applications to either follow up on or move on from. Knowing
+you have been ghosted is far better than endlessly wondering.
+
+## Step 3: Comparing Real Offers
+
+You have received a few offers — congratulations! But a higher salary
+does not always mean a better deal. A $95,000 salary in New York City
+buys you far less than $85,000 in Austin, Texas.
+
+`compare_offers()` adjusts each offer by the cost of living index of
+its city, so you can compare apples to apples.
+
+```{r}
+compare_offers(jobs)
+```
+
+At first glance, Microsoft's offer of $110,000 looks like the clear
+winner. But once adjusted for Seattle's cost of living index of 91,
+the real purchasing power comes out to $120,879 — still the best.
+Accenture's $95,000 in Chicago adjusts to $107,955, and Nike's
+$75,000 in Portland adjusts to $88,235. Without this adjustment, you
+might overvalue a high nominal salary in an expensive city and
+undervalue a modest offer somewhere more affordable.
+
+## Step 4: Seeing the Full Picture
+
+Finally, `pipeline_stage()` gives you a visual summary of your entire
+job search funnel — how many applications made it to each stage.
+
+```{r fig.width = 6, fig.height = 4}
+pipeline_stage(jobs)
+```
+
+The chart shows the biggest drop-off happens between Applied and
+Interviewed — only 7 out of 30 applications (23%) led to an interview.
+From there, 3 out of 7 interviews (43%) resulted in an offer. This
+tells you that the hardest part of this job search is getting in the
+door in the first place. If you want more offers, the data says: apply
+more strategically, not just more broadly.
+
+## Wrapping Up
+
+jobtrackr will not write your cover letters or prep you for interviews.
+What it will do is cut through the noise of a busy job search and show
+you clearly what is working and what is not. The four functions work
+together as a complete toolkit — summarize your pipeline, flag what
+needs attention, compare your real options, and visualize your
+progress.
+
+The best job search is an informed one.
