@@ -1,0 +1,23 @@
+Package: jobtrackr
+Title: Job Applications Tracking and Analyzing Tool
+Version: 0.1.0
+Authors@R:
+    person("Tiana", "Ho", email = "thuytien.t.ho@lawrence.edu", role = c("aut", "cre"))
+Description: Simple tool for tracking and analyzing job applications,
+    including status summaries, offer comparisons, and response timing.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports:
+    checkmate,
+    ggplot2
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
+Depends: 
+    R (>= 3.5)
+LazyData: true
