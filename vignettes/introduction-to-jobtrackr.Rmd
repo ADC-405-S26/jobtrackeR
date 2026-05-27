@@ -10,23 +10,21 @@ vignette: >
 ## The Problem With Job Hunting
 
 It is the spring semester of your senior year. You have been applying
-to jobs for weeks — some on LinkedIn, some through referrals, some on
-Indeed. Your spreadsheet is a mess. You cannot remember which companies
-responded, which ones ghosted you, or whether that offer from Austin is
-actually better than the one from San Francisco once you factor in the
+to jobs for weeks, in the current job market,  some on LinkedIn, some through 
+referrals, some on Indeed. Your spreadsheet is a mess. You cannot remember which
+companies responded, which ones ghosted you, or whether that offer from NYC is
+actually better than the one from Wisconsin once you factor in the
 cost of living.
 
-This is exactly the problem jobtrackr was built to solve.
-
-jobtrackr is a small R package that helps you track, organize, and
-analyze your job applications. It will not find you a job — but it
-will help you think clearly about the ones you have already applied for.
+jobtrackr was built to solve that problem. It is a small R package that helps you
+track, organize, and analyze your job applications. It will not find you a job,
+but it will help you have a clearer vision about the ones you have already applied for.
 
 ## Getting Started
 
 First, load the package and the built-in example dataset. The `jobs`
 dataset contains 30 simulated job applications across different
-companies, locations, and statuses — a realistic snapshot of what a
+companies, locations, and statuses. Which I think is sort of realistic  of what a
 semester of job hunting looks like.
 
 ```{r setup, message = FALSE, warning = FALSE}
@@ -56,7 +54,7 @@ application_summary(jobs)
 ```
 
 Out of 30 applications, exactly one third are still sitting at
-"Applied" with no response — and another third ended in rejection.
+"Applied" with no response, and another third ended in rejection.
 Only 3 applications (10%) resulted in an offer. The overall response
 rate is 66.7%, meaning roughly 2 out of every 3 applications received
 some kind of reply. This kind of summary helps you quickly understand
@@ -78,16 +76,16 @@ result[result$possibly_ghosted == TRUE,
 
 Ten applications have gone over 21 days with no response and are
 flagged as possibly ghosted. Companies like Deloitte, Meta, and
-Salesforce have been waiting the longest — over 800 days in this
-simulated dataset. In a real job search, this list tells you exactly
-which applications to either follow up on or move on from. Knowing
-you have been ghosted is far better than endlessly wondering.
+Salesforce have been waiting the longest, of over 800 days in this
+simulated dataset. In a real job search, I think this is helpful because it tells
+you exactly which applications to either follow up on or move on from. Knowing
+you have been ghosted is far better than keep on wonderig about the statu.s
 
 ## Step 3: Comparing Real Offers
 
-You have received a few offers — congratulations! But a higher salary
-does not always mean a better deal. A $95,000 salary in New York City
-buys you far less than $85,000 in Austin, Texas.
+You have received a few offers! Congrats! But a higher salary
+does not always mean a better deal. A $95,000 salary in NYC
+buys you far less than $85,000 in WI
 
 `compare_offers()` adjusts each offer by the cost of living index of
 its city, so you can compare apples to apples.
@@ -98,7 +96,7 @@ compare_offers(jobs)
 
 At first glance, Microsoft's offer of $110,000 looks like the clear
 winner. But once adjusted for Seattle's cost of living index of 91,
-the real purchasing power comes out to $120,879 — still the best.
+the real purchasing power comes out to $120,879, which is still the best.
 Accenture's $95,000 in Chicago adjusts to $107,955, and Nike's
 $75,000 in Portland adjusts to $88,235. Without this adjustment, you
 might overvalue a high nominal salary in an expensive city and
@@ -114,19 +112,16 @@ pipeline_stage(jobs)
 ```
 
 The chart shows the biggest drop-off happens between Applied and
-Interviewed — only 7 out of 30 applications (23%) led to an interview.
+Interviewed, only 7 out of 30 applications (23%) led to an interview.
 From there, 3 out of 7 interviews (43%) resulted in an offer. This
 tells you that the hardest part of this job search is getting in the
-door in the first place. If you want more offers, the data says: apply
+door in the first place. If you want more offers, it's more convincing to apply
 more strategically, not just more broadly.
 
 ## Wrapping Up
 
-jobtrackr will not write your cover letters or prep you for interviews.
-What it will do is cut through the noise of a busy job search and show
-you clearly what is working and what is not. The four functions work
-together as a complete toolkit — summarize your pipeline, flag what
-needs attention, compare your real options, and visualize your
+jobtrackr will not help ypu prep you for interviews.
+What it will do is to give yu a broader view of the job search and show
+you clearly what is working and what is not. The four functionsm, namely, summarize
+your pipeline, flag what needs attention, compare your real options, and visualize your
 progress.
-
-The best job search is an informed one.
