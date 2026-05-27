@@ -18,10 +18,11 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-jobtrackr helps you track, organize, and analyze your job applications.
-It provides four simple tools to summarize application statuses, flag
-applications with no response, compare offers adjusted for cost of
-living, and visualize your hiring pipeline.
+Job hunting is daunting, especially in this market nowadays. Between dozens of 
+applications, different statuses, and offers in different cities, it is easy to 
+lose track of where everything are.
+
+jobtrackr provides four simple tools to help you organize and analyze your job search.
 
 ## Installation
 
@@ -30,24 +31,33 @@ living, and visualize your hiring pipeline.
 pak::pak("ADC-405-S26/jobtrackeR")
 ```
 
-## Quick Start
+## Functions
+
+- `application_summary()` - counts applications by status and returns your overall response rate
+- `days_since_applied()` - calculates how long each application has been waiting and flags ones with no response after a set number of days
+- `compare_offers()` - adjusts offer salaries by cost of living so you can compare them fairly across cities
+- `pipeline_stage()` - visualizes your full hiring funnel from Applied to Offered
+
+## Example
 
 ```{r example, message = FALSE, warning = FALSE}
 library(jobtrackr)
 data(jobs)
-```
-
-### Summarize your applications
-```{r}
 application_summary(jobs)
 ```
 
-### Compare offers by cost of living
+## Dataset
+
+The package includes `jobs`, a simulated dataset of 30 job applications 
+with columns for company, position, location, cost of living, status, 
+date applied, salary, and source.
+
 ```{r}
-compare_offers(jobs)
+head(jobs[, c("company", "position", "status", "salary")])
 ```
 
-For a full walkthrough of all four functions with real examples and
-detailed commentary, see the
+## Learn More
+
+For a full walkthrough with real examples and commentary, see the
 [Introduction to jobtrackr](https://adc-405-s26.github.io/jobtrackeR/articles/introduction-to-jobtrackr.html)
 vignette.
