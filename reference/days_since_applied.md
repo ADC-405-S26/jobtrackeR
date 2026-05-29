@@ -82,36 +82,36 @@ days_since_applied(jobs)
 #> 29         Slack         HR Generalist San Francisco CA            110
 #> 30          Zoom      Customer Success      San Jose CA            105
 #>         status date_applied salary      source days_waiting possibly_ghosted
-#> 1  Interviewed   2024-01-10  95000    LinkedIn          868            FALSE
-#> 2     Rejected   2024-01-15  85000    Referral          863            FALSE
-#> 3      Applied   2024-01-20  78000      Indeed          858             TRUE
-#> 4      Offered   2024-02-01 110000    LinkedIn          846            FALSE
-#> 5     Rejected   2024-02-05  88000 Career Fair          842            FALSE
-#> 6  Interviewed   2024-02-10  82000      Indeed          837            FALSE
-#> 7      Applied   2024-02-15  98000    Referral          832             TRUE
-#> 8     Rejected   2024-02-20  92000    LinkedIn          827            FALSE
-#> 9      Offered   2024-03-01  75000 Career Fair          817            FALSE
-#> 10     Applied   2024-03-05 105000      Indeed          813             TRUE
-#> 11 Interviewed   2024-03-08  90000    LinkedIn          810            FALSE
-#> 12    Rejected   2024-03-10 115000    Referral          808            FALSE
-#> 13     Applied   2024-03-12  72000      Indeed          806             TRUE
-#> 14    Rejected   2024-03-15  76000    LinkedIn          803            FALSE
-#> 15 Interviewed   2024-03-18  88000      Indeed          800            FALSE
-#> 16     Offered   2024-03-20  95000    Referral          798            FALSE
-#> 17     Applied   2024-03-22  82000 Career Fair          796             TRUE
-#> 18    Rejected   2024-03-25  89000    LinkedIn          793            FALSE
-#> 19     Applied   2024-03-28  87000      Indeed          790             TRUE
-#> 20 Interviewed   2024-04-01  93000    LinkedIn          786            FALSE
-#> 21    Rejected   2024-04-03  80000 Career Fair          784            FALSE
-#> 22     Applied   2024-04-05  84000      Indeed          782             TRUE
-#> 23 Interviewed   2024-04-08 102000    LinkedIn          779            FALSE
-#> 24    Rejected   2024-04-10 108000    Referral          777            FALSE
-#> 25     Applied   2024-04-12  96000      Indeed          775             TRUE
-#> 26    Rejected   2024-04-15  99000    LinkedIn          772            FALSE
-#> 27     Applied   2024-04-17  91000 Career Fair          770             TRUE
-#> 28 Interviewed   2024-04-20 112000    Referral          767            FALSE
-#> 29    Rejected   2024-04-22  78000      Indeed          765            FALSE
-#> 30     Applied   2024-04-25  85000    LinkedIn          762             TRUE
+#> 1  Interviewed   2024-01-10  95000    LinkedIn          870            FALSE
+#> 2     Rejected   2024-01-15  85000    Referral          865            FALSE
+#> 3      Applied   2024-01-20  78000      Indeed          860             TRUE
+#> 4      Offered   2024-02-01 110000    LinkedIn          848            FALSE
+#> 5     Rejected   2024-02-05  88000 Career Fair          844            FALSE
+#> 6  Interviewed   2024-02-10  82000      Indeed          839            FALSE
+#> 7      Applied   2024-02-15  98000    Referral          834             TRUE
+#> 8     Rejected   2024-02-20  92000    LinkedIn          829            FALSE
+#> 9      Offered   2024-03-01  75000 Career Fair          819            FALSE
+#> 10     Applied   2024-03-05 105000      Indeed          815             TRUE
+#> 11 Interviewed   2024-03-08  90000    LinkedIn          812            FALSE
+#> 12    Rejected   2024-03-10 115000    Referral          810            FALSE
+#> 13     Applied   2024-03-12  72000      Indeed          808             TRUE
+#> 14    Rejected   2024-03-15  76000    LinkedIn          805            FALSE
+#> 15 Interviewed   2024-03-18  88000      Indeed          802            FALSE
+#> 16     Offered   2024-03-20  95000    Referral          800            FALSE
+#> 17     Applied   2024-03-22  82000 Career Fair          798             TRUE
+#> 18    Rejected   2024-03-25  89000    LinkedIn          795            FALSE
+#> 19     Applied   2024-03-28  87000      Indeed          792             TRUE
+#> 20 Interviewed   2024-04-01  93000    LinkedIn          788            FALSE
+#> 21    Rejected   2024-04-03  80000 Career Fair          786            FALSE
+#> 22     Applied   2024-04-05  84000      Indeed          784             TRUE
+#> 23 Interviewed   2024-04-08 102000    LinkedIn          781            FALSE
+#> 24    Rejected   2024-04-10 108000    Referral          779            FALSE
+#> 25     Applied   2024-04-12  96000      Indeed          777             TRUE
+#> 26    Rejected   2024-04-15  99000    LinkedIn          774            FALSE
+#> 27     Applied   2024-04-17  91000 Career Fair          772             TRUE
+#> 28 Interviewed   2024-04-20 112000    Referral          769            FALSE
+#> 29    Rejected   2024-04-22  78000      Indeed          767            FALSE
+#> 30     Applied   2024-04-25  85000    LinkedIn          764             TRUE
 days_since_applied(jobs, flag_after = 14)
 #>          company              position         location cost_of_living
 #> 1         Google          Data Analyst      New York NY            100
@@ -145,34 +145,34 @@ days_since_applied(jobs, flag_after = 14)
 #> 29         Slack         HR Generalist San Francisco CA            110
 #> 30          Zoom      Customer Success      San Jose CA            105
 #>         status date_applied salary      source days_waiting possibly_ghosted
-#> 1  Interviewed   2024-01-10  95000    LinkedIn          868            FALSE
-#> 2     Rejected   2024-01-15  85000    Referral          863            FALSE
-#> 3      Applied   2024-01-20  78000      Indeed          858             TRUE
-#> 4      Offered   2024-02-01 110000    LinkedIn          846            FALSE
-#> 5     Rejected   2024-02-05  88000 Career Fair          842            FALSE
-#> 6  Interviewed   2024-02-10  82000      Indeed          837            FALSE
-#> 7      Applied   2024-02-15  98000    Referral          832             TRUE
-#> 8     Rejected   2024-02-20  92000    LinkedIn          827            FALSE
-#> 9      Offered   2024-03-01  75000 Career Fair          817            FALSE
-#> 10     Applied   2024-03-05 105000      Indeed          813             TRUE
-#> 11 Interviewed   2024-03-08  90000    LinkedIn          810            FALSE
-#> 12    Rejected   2024-03-10 115000    Referral          808            FALSE
-#> 13     Applied   2024-03-12  72000      Indeed          806             TRUE
-#> 14    Rejected   2024-03-15  76000    LinkedIn          803            FALSE
-#> 15 Interviewed   2024-03-18  88000      Indeed          800            FALSE
-#> 16     Offered   2024-03-20  95000    Referral          798            FALSE
-#> 17     Applied   2024-03-22  82000 Career Fair          796             TRUE
-#> 18    Rejected   2024-03-25  89000    LinkedIn          793            FALSE
-#> 19     Applied   2024-03-28  87000      Indeed          790             TRUE
-#> 20 Interviewed   2024-04-01  93000    LinkedIn          786            FALSE
-#> 21    Rejected   2024-04-03  80000 Career Fair          784            FALSE
-#> 22     Applied   2024-04-05  84000      Indeed          782             TRUE
-#> 23 Interviewed   2024-04-08 102000    LinkedIn          779            FALSE
-#> 24    Rejected   2024-04-10 108000    Referral          777            FALSE
-#> 25     Applied   2024-04-12  96000      Indeed          775             TRUE
-#> 26    Rejected   2024-04-15  99000    LinkedIn          772            FALSE
-#> 27     Applied   2024-04-17  91000 Career Fair          770             TRUE
-#> 28 Interviewed   2024-04-20 112000    Referral          767            FALSE
-#> 29    Rejected   2024-04-22  78000      Indeed          765            FALSE
-#> 30     Applied   2024-04-25  85000    LinkedIn          762             TRUE
+#> 1  Interviewed   2024-01-10  95000    LinkedIn          870            FALSE
+#> 2     Rejected   2024-01-15  85000    Referral          865            FALSE
+#> 3      Applied   2024-01-20  78000      Indeed          860             TRUE
+#> 4      Offered   2024-02-01 110000    LinkedIn          848            FALSE
+#> 5     Rejected   2024-02-05  88000 Career Fair          844            FALSE
+#> 6  Interviewed   2024-02-10  82000      Indeed          839            FALSE
+#> 7      Applied   2024-02-15  98000    Referral          834             TRUE
+#> 8     Rejected   2024-02-20  92000    LinkedIn          829            FALSE
+#> 9      Offered   2024-03-01  75000 Career Fair          819            FALSE
+#> 10     Applied   2024-03-05 105000      Indeed          815             TRUE
+#> 11 Interviewed   2024-03-08  90000    LinkedIn          812            FALSE
+#> 12    Rejected   2024-03-10 115000    Referral          810            FALSE
+#> 13     Applied   2024-03-12  72000      Indeed          808             TRUE
+#> 14    Rejected   2024-03-15  76000    LinkedIn          805            FALSE
+#> 15 Interviewed   2024-03-18  88000      Indeed          802            FALSE
+#> 16     Offered   2024-03-20  95000    Referral          800            FALSE
+#> 17     Applied   2024-03-22  82000 Career Fair          798             TRUE
+#> 18    Rejected   2024-03-25  89000    LinkedIn          795            FALSE
+#> 19     Applied   2024-03-28  87000      Indeed          792             TRUE
+#> 20 Interviewed   2024-04-01  93000    LinkedIn          788            FALSE
+#> 21    Rejected   2024-04-03  80000 Career Fair          786            FALSE
+#> 22     Applied   2024-04-05  84000      Indeed          784             TRUE
+#> 23 Interviewed   2024-04-08 102000    LinkedIn          781            FALSE
+#> 24    Rejected   2024-04-10 108000    Referral          779            FALSE
+#> 25     Applied   2024-04-12  96000      Indeed          777             TRUE
+#> 26    Rejected   2024-04-15  99000    LinkedIn          774            FALSE
+#> 27     Applied   2024-04-17  91000 Career Fair          772             TRUE
+#> 28 Interviewed   2024-04-20 112000    Referral          769            FALSE
+#> 29    Rejected   2024-04-22  78000      Indeed          767            FALSE
+#> 30     Applied   2024-04-25  85000    LinkedIn          764             TRUE
 ```

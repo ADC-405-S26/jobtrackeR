@@ -98,16 +98,16 @@ result[result$possibly_ghosted == TRUE,
 ```
 
     ##       company             position date_applied days_waiting
-    ## 3    Deloitte     Business Analyst   2024-01-20          858
-    ## 7        Meta      Product Analyst   2024-02-15          832
-    ## 10 Salesforce           BI Analyst   2024-03-05          813
-    ## 13     Target Supply Chain Analyst   2024-03-12          806
-    ## 17        PWC      Audit Associate   2024-03-22          796
-    ## 19     Boeing         Data Analyst   2024-03-28          790
-    ## 22       KPMG     Advisory Analyst   2024-04-05          782
-    ## 25    Spotify         Data Analyst   2024-04-12          775
-    ## 27   LinkedIn            Recruiter   2024-04-17          770
-    ## 30       Zoom     Customer Success   2024-04-25          762
+    ## 3    Deloitte     Business Analyst   2024-01-20          860
+    ## 7        Meta      Product Analyst   2024-02-15          834
+    ## 10 Salesforce           BI Analyst   2024-03-05          815
+    ## 13     Target Supply Chain Analyst   2024-03-12          808
+    ## 17        PWC      Audit Associate   2024-03-22          798
+    ## 19     Boeing         Data Analyst   2024-03-28          792
+    ## 22       KPMG     Advisory Analyst   2024-04-05          784
+    ## 25    Spotify         Data Analyst   2024-04-12          777
+    ## 27   LinkedIn            Recruiter   2024-04-17          772
+    ## 30       Zoom     Customer Success   2024-04-25          764
 
 Ten applications have gone over 21 days with no response and are flagged
 as possibly ghosted. Companies like Deloitte, Meta, and Salesforce have
