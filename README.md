@@ -34,6 +34,9 @@ pak::pak("ADC-405-S26/jobtrackeR")
 
 ## Example
 
+Note: the GitHub repo is named `jobtrackeR` but the package loads as
+`jobtrackr`
+
 ``` r
 library(jobtrackr)
 data(jobs)
